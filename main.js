@@ -119,7 +119,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 setTimeout(() => {
   contentElem.style.opacity = 1;
-}, 100);
+}, 500);
 
 
 
