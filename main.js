@@ -36,8 +36,9 @@ async function load() {
 
   let ranNum1 = Math.floor(Math.random() * json1.length);
   let ranNum2 = Math.floor(Math.random() * json2.length);
+  console.log(ranNum1, ranNum2);
   fortuneElem.innerText = `${json1[ranNum1].fortune}`;
-  itemElem.innerText = `${json2[ranNum1].item}`;
+  itemElem.innerText = `${json2[ranNum2].item}`;
 }
 
 
