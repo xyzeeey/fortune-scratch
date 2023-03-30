@@ -101,25 +101,26 @@ function draw() {
 }
 
 
+setDate();
+setLuckyNum();
 
 let rgbVals;
 let tempColor;
 
-
-
+rgbVals = randomRGB();
+tempColor = "rgb(" + rgbVals[0] + ", " + rgbVals[1] + ", " + rgbVals[2] + ")";
+contentElem.style.backgroundColor = `${tempColor}`;
 
 window.addEventListener('DOMContentLoaded', () => {
-  rgbVals = randomRGB();
-  tempColor = "rgb(" + rgbVals[0] + ", " + rgbVals[1] + ", " + rgbVals[2] + ")";
-  contentElem.style.backgroundColor = `${tempColor}`;
 
-  setDate();
-  setLuckyNum();
-});
+
+})
+
+
 
 setTimeout(() => {
   contentElem.style.opacity = 1;
-}, 500);
+}, 600);
 
 
 

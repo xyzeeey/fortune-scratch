@@ -37,6 +37,7 @@ main canvas {
   width: 100vw;
   height: 100vh;
   opacity: 0;
+  transition: all 0.2s;
 }
 .content .wrap {
   text-align: center;
@@ -52,6 +53,7 @@ main canvas {
   line-height: 125%;
 }
 .content .fortune {
+  max-width: 800px;
   font-size: 2rem;
   line-height: 2.6rem;
   padding: 0.6em 1em;
