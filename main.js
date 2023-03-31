@@ -2,7 +2,7 @@ const contentElem = document.querySelector('.content');
 const fortuneElem = document.querySelector('.fortune');
 const dateElem = document.querySelector('.title-date');
 const itemElem = document.querySelector('.btm-item');
-const numberElem = document.querySelector('.btm-number');
+const alphaElem = document.querySelector('.btm-alpha');
 
 const today = new Date(); // 현재 날짜와 시간을 가져옴
 const year = today.getFullYear(); // 현재 연도를 가져옴
@@ -13,14 +13,23 @@ const dateArr = [year, month, date]; // 배열에 년, 월, 일을 차례로 담
 console.log(dateArr); // 예시 출력: [2021, 09, 28]
 
 
+// 알파벳 배열 생성
+const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+function setAlphabet() {
+  const randomIndex = Math.floor(Math.random() * alphabet.length);
+  const randomAlphabet = alphabet[randomIndex];
+  alphaElem.innerText = `${randomAlphabet}`;
+}
+
 
 function setDate() {
   dateElem.innerText = `${year}${month}${date}`;
 }
 
-function setLuckyNum() {
-  numberElem.innerText = `${Math.round(Math.random() * 99)}`;
-}
+// function setLuckyNum() {
+//   numberElem.innerText = `${Math.round(Math.random() * 99)}`;
+// }
 
 
 let json1;
@@ -103,7 +112,8 @@ function draw() {
 
 
 setDate();
-setLuckyNum();
+// setLuckyNum();
+setAlphabet();
 
 let rgbVals;
 let tempColor;

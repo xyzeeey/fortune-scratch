@@ -71,7 +71,7 @@ main canvas {
   gap: 8px;
 }
 .content .btm-cnt .btm-item,
-.content .btm-cnt .btm-number {
+.content .btm-cnt .btm-alpha {
   border: 2px solid;
   border-radius: 20px;
   padding: 6px 20px;
