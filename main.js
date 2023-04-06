@@ -10,7 +10,6 @@ const month = String(today.getMonth() + 1).padStart(2, '0'); // 현재 월을 �
 const date = String(today.getDate()).padStart(2, '0'); // 현재 일을 가져오고 두자리 형태로 변환
 
 const dateArr = [year, month, date]; // 배열에 년, 월, 일을 차례로 담음
-console.log(dateArr); // 예시 출력: [2021, 09, 28]
 
 
 // 알파벳 배열 생성
@@ -45,7 +44,6 @@ async function load() {
 
   let ranNum1 = Math.floor(Math.random() * json1.length);
   let ranNum2 = Math.floor(Math.random() * json2.length);
-  console.log(ranNum1, ranNum2);
   fortuneElem.innerText = `${json1[ranNum1].fortune}`;
   itemElem.innerText = `${json2[ranNum2].item}`;
 }
@@ -78,7 +76,7 @@ function setup() {
   messageX = width;
   
   topLayer.strokeWeight(50);
-  topLayer.stroke(rgbVals[0], rgbVals[1], rgbVals[2]);
+  topLayer.stroke(rgbVals[0] > 200 ? rgbVals[0] - 50 : rgbVals[0], rgbVals[1] > 220 ? rgbVals[1] - 50 : rgbVals[1], rgbVals[2] > 220 ? rgbVals[2] - 50 : rgbVals[2]);
 }
 
 
@@ -144,22 +142,21 @@ setTimeout(() => {
 function randomNum() {
   return Math.floor(Math.random() * 256);
 }
-randomNum();
 
 
 function randomRGB() {
   let red = randomNum();
   let green = randomNum();
   let blue = randomNum();
-  if (red + green + blue <= 130) {
+  let rgb;
+  let luma = 0.2126 * red + 0.7152 * green + 0.0722 * blue; // per ITU-R BT.709
+  while (luma < 70 || luma > 230) {
     red = randomNum();
     green = randomNum();
     blue = randomNum();
-  } else {
-    return [red,green,blue];
+    luma = 0.2126 * red + 0.7152 * green + 0.0722 * blue; // per ITU-R BT.709
   }
-}
-
-function generateRandomNumber() {
-  return Math.floor(Math.random() * 99) + 1;
+  rgb = [red,green,blue];
+  console.log(luma);
+  return rgb;
 }
