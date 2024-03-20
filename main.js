@@ -12,13 +12,14 @@ const date = String(today.getDate()).padStart(2, '0'); // 현재 일을 가져�
 const dateArr = [year, month, date]; // 배열에 년, 월, 일을 차례로 담음
 
 
-// 알파벳 배열 생성
-const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+// 초성 배열 생성
+const consonants = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
 
-function setAlphabet() {
-  const randomIndex = Math.floor(Math.random() * alphabet.length);
-  const randomAlphabet = alphabet[randomIndex];
-  alphaElem.innerText = `${randomAlphabet}`;
+function getRandomConsonants() {
+  const first = consonants[Math.floor(Math.random() * consonants.length)];
+  const second = consonants[Math.floor(Math.random() * consonants.length)];
+  const randomCons = first + second;
+  alphaElem.innerText = `${randomCons}`;
 }
 
 
@@ -117,7 +118,7 @@ function draw() {
 
 setDate();
 // setLuckyNum();
-setAlphabet();
+getRandomConsonants()
 
 let rgbVals;
 let tempColor;
