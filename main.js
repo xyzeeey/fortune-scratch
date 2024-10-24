@@ -55,7 +55,7 @@ async function load() {
 window.onload = function() {
   setTimeout(function() {
       load();
-  }, 1000); // 1000ms = 1 second
+  }, 700); // 1000ms = 1 second
 };
 
 
