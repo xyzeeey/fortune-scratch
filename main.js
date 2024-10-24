@@ -50,14 +50,7 @@ async function load() {
 }
 
 
-// load();
-
-window.onload = function() {
-  setTimeout(function() {
-      load();
-  }, 700); // 1000ms = 1 second
-};
-
+load();
 
 
 
@@ -93,6 +86,7 @@ function windowResized() {
   topLayer.resizeCanvas(windowWidth, windowHeight);
 }
 
+const wrapElem = document.querySelector('.content .wrap');
 
 function draw() {
   
@@ -118,8 +112,11 @@ function draw() {
 
   if (mouseIsPressed) {
     topLayer.line(mouseX, mouseY, pmouseX, pmouseY);
+    wrapElem.style.opacity = 1;
   }
   image(topLayer, 0, 0);
+
+
 }
 
 
