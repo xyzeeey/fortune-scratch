@@ -50,7 +50,14 @@ async function load() {
 }
 
 
-load();
+// load();
+
+window.onload = function() {
+  setTimeout(function() {
+      load();
+  }, 1000); // 1000ms = 1 second
+};
+
 
 
 
