@@ -88,6 +88,14 @@ function windowResized() {
 
 const wrapElem = document.querySelector('.content .wrap');
 
+function setOpacity() {
+  wrapElem.style.opacity = 1;
+}
+
+document.addEventListener("mousedown", setOpacity, { once: true });
+document.addEventListener("touchstart", setOpacity, { once: true });
+
+
 function draw() {
   
   background(255);
@@ -112,10 +120,8 @@ function draw() {
 
   if (mouseIsPressed) {
     topLayer.line(mouseX, mouseY, pmouseX, pmouseY);
-    wrapElem.style.opacity = 1;
   }
   image(topLayer, 0, 0);
-
 
 }
 
@@ -131,16 +137,12 @@ rgbVals = randomRGB();
 tempColor = "rgb(" + rgbVals[0] + ", " + rgbVals[1] + ", " + rgbVals[2] + ")";
 contentElem.style.backgroundColor = `${tempColor}`;
 
-window.addEventListener('DOMContentLoaded', () => {
-
-
-})
 
 
 
-setTimeout(() => {
-  contentElem.style.opacity = 1;
-}, 600);
+// setTimeout(() => {
+//   contentElem.style.opacity = 1;
+// }, 600);
 
 
 
